@@ -1,0 +1,19 @@
+{
+    "posts":[
+        {
+            "title":"post title",
+            "responsible": "Juan",
+            "description": "this post is just a simple example"
+        },
+        {
+            "title":"post title",
+            "responsible": "Mark",
+            "description": "this post is just a simple example"
+        },
+        {
+            "title":"post title",
+            "responsible": "Sebastian",
+            "description": "this post is just a simple example"
+        }
+    ]
+}   

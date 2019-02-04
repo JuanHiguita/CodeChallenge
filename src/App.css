@@ -1,0 +1,34 @@
+.App {
+  text-align: center;
+}
+.Main-navbar{
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.06), 0 4px 5px 0 rgba(0,0,0,0.06), 0 1px 10px 0 rgba(0,0,0,0.08);
+}
+.navbar-elements{
+  flex-direction: row;
+  display: flex;
+  outline: none;
+  list-style: none;
+}
+.navbar-elements .Search-bar .Search-bar-input{
+  border-radius: 5px;
+  outline: none;
+}
+
+.navbar-elements .Forum-home .home-button{
+  margin-top: 1em;
+  margin-right: 10em;
+  position: relative;
+} 
+
+.navbar-elements .Search-bar .Search-bar-input{
+  margin-left:5em;
+  margin-top: 1em;
+  margin-right: 5em;
+  position: relative;
+}
+.navbar-elements .User-profile .profile-button{
+  position: relative;
+  margin-left:10em;
+  margin-top: 1em;
+}
