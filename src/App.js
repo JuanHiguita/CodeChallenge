@@ -1,60 +1,57 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { posts } from './posts.json';
-
 class App extends Component {
+  
+  //
   constructor(){
     super();
     this.state = {
-      posts
+     username: ' ',
+     gistDescription:' ',
+     gistLink:' ',
+     gistDate:' '
     }
   }
+  
+  //
+  getGist(username){
+    return fetch(`https://api.github.com/users/${username}/gists`)
+    .then(gist => gist.json())
+    .then(gist => {
+      return gist;
+    })
+  }
+
+  //
+  async handleSubmit(e){
+    e.preventDefault();
+    let gists= await this.getGist(this.refs.username.value);
+    console.log(gists);
+    const gist = this.setState({username:gists.owner.login, gistDescription:gists.description, gistLink:gists.url, gistDate:gists.created_at});    
+    }
+  
+
 
   render() {
-    const posts = this.state.posts.map((post, i) => {
-      return(
-        <div className = "col-md-12">
-          <div className = "card mt-4">
-            <div className = "card-header">
-            <h4>{ post.title }</h4>
-            <p><strong>{post.responsible}</strong></p>
-            </div>
-            <div className = "card-body">
-              { post.description }
+    let gist;
+    //
+    return (
+      <div className="App">
+        <h1 className="title col-md-12">Search an User</h1>
+        <div className="container mainContainer">
+          <div className="row">
+            <div className="formCard card col-md-12">
+            <form className="mainForm" onSubmit={e=>this.handleSubmit(e)}>  
+              <input className="search-bar-input form-control" placeholder="Username" ref="username" type="text" aria-label="Search"></input>
+              <input type="submit" value="Search" className="btn btn-primary buttonSearch" onClick={e=>this.handleSubmit(e)}></input>
+              <input type="submit" value="Log In" className="btn btn-primary buttonLogIn"></input>
+              <input type="submit" value="Sign Up" className="btn btn-primary buttonSignUp"></input>
+            </form>
             </div>
           </div>
         </div>
-      )
-    })
-
-    return (
-      <div className="App">
-          <nav className="navbar navbar-light bg-light Main-navbar">
-            <div className="container navContainer">
-              <div className="row">
-                <ul className="navbar-elements">
-                  <li className="Forum-home col-md-4">
-                    <i className="fas fa-home home-button"></i>
-                  </li>
-                  <li className="Search-bar col-md-4">
-                    <input className="Search-bar-input form-control" type="text" placeholder="Search" aria-label="Search"></input>
-                  </li>
-                  <li className="Log-In col-md-4">
-                    <a>Log In</a>
-                  </li>
-                  <li className="Sign-Up col-md-4">
-                    <a>Sign Up</a>
-                  </li>
-                </ul>
-                </div>
-              </div>
-          </nav>
-          <div className="container">
-            <div className="row mt-4">
-              { posts }
-            </div>
-          </div>                
+                   
       </div>
     );
   }
