@@ -6,41 +6,95 @@
   margin-top: 3em;
 }
 
+.mainNav{
+  min-height: 56px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.06), 0 4px 5px 0 rgba(0,0,0,0.06), 0 1px 10px 0 rgba(0,0,0,0.08);
+  text-decoration: none;
+}
+
 .title{
-  margin:1em auto 0;
-  font-size: 5em;
-  font-family: 'Roboto', sans-serif;
+  font-size: 2em;
+}
+.homeBtn{
+  border: none;
+  background-color: transparent;
+}
+.cardSignIn{
+  width: 20em;
+  height: 15em;
+  margin: 1em 25em;
+  padding-left: 1em;
 }
 
-.btn{
-  width: 100%;
-  height: 3.2em;
-  text-transform: uppercase;
-  position: relative;
-  margin: 1em 0em;
-  border-radius: 6px;
-}
-
-.btn:hover { 
-  background:rgba(180, 69, 214, 0.603); 
-}
-
-.search-bar-input{
-  width: 100%;
+.btnRead{
   height: 3em;
-  margin: 1em 0em;
+  background: #232526;
 }
 
-.buttonLogIn, .buttonSignUp{
-  width: 40%;
-  margin: 1em 1em;
+.searchBarInput{
+  height: 3em; 
 }
 
-.formCard{
-  max-width: 420px;
-  text-align: center;
-  margin: 0 auto;
-  position: relative;
+.buttonSignOut, .buttonSearch{
+  background: transparent;
+  color: black;
+  border:none;
+}
+
+.buttonSignOut:hover, .buttonSearch:hover{
+  background: transparent;
+  color:fade(black,80%);
+  border-bottom: 3px solid #2423238f;
+}
+
+.gistCard, .gistContent, .createGistForm{
+  background: #ffffff;
+  text-align: justify;
   border-radius: 6px;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.06), 0 4px 5px 0 rgba(0,0,0,0.06), 0 1px 10px 0 rgba(0,0,0,0.08);
+}
+
+.cardHeader {
+  outline: none;
+  border-bottom: 1px solid #3d3939a1;
+}
+
+.cardBody{
+  text-align: right;
+}
+
+.updatedDate{
+    height: 0px;
+    font-size: 12px;
+    margin: 0em 9em 2em;
+    color: #202227e0;
+  }
+
+.gistDescription {
+  text-align: justify;
+  margin: 1em 1em 0em;
+  font-size: 20px;
+  color: #202227e0;
+}
+
+.userProfileImage{
+  width: 3em;
+  height: 3em;
+  border-radius: 100%;
+  margin: 1em;
+}
+
+.authUserImage{
+  width: 2em;
+  height: 2em;
+  border-radius: 100%;
+  margin: 1em;
+}
+
+.gistName{
+  text-align: center;
+  margin-left: 1em;
+  font-size: 1.5em;
+  display: inline;
 }
