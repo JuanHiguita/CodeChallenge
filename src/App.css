@@ -13,13 +13,27 @@
   text-decoration: none;
 }
 
-.title{
-  font-size: 2em;
+.homePage {
+  padding: 7em 17em;
+  text-align: justify;
 }
-.homeBtn{
+
+.homePage .description{
+  font-family:'Muli', sans-serif;
+  margin: 2em .5em;
+  font-size: 20px;
+}
+
+.homePage .title{
+  font-family: 'Major Mono Display', monospace;
+  font-size: 100px;
+}
+
+.logo{
   border: none;
   background-color: transparent;
 }
+
 .cardSignIn{
   width: 20em;
   height: 15em;
@@ -36,13 +50,13 @@
   height: 3em; 
 }
 
-.buttonSignOut, .buttonSearch{
+.buttonSearch, .buttonBack{
   background: transparent;
   color: black;
   border:none;
 }
 
-.buttonSignOut:hover, .buttonSearch:hover{
+.buttonSearch:hover, .buttonBack:hover{
   background: transparent;
   color:fade(black,80%);
   border-bottom: 3px solid #2423238f;
@@ -69,7 +83,7 @@
     font-size: 12px;
     margin: 0em 9em 2em;
     color: #202227e0;
-  }
+}
 
 .gistDescription {
   text-align: justify;

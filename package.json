@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "bootstrap-social": "^5.1.1",
     "create-gist": "^1.0.0",
     "firebase": "^5.8.2",
     "marked": "^0.6.0",
@@ -12,7 +13,10 @@
     "react-firebaseui": "^3.1.2",
     "react-github-login": "^1.0.3",
     "react-http-request": "^2.0.0",
-    "react-scripts": "2.1.3"
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.3",
+    "react-social-login-buttons": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
