@@ -1,7 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import marked from "marked";
 import GistMark from '../components/GistMark';
-import Navigation from '../components/Navigation';
 
 class GistDetail extends Component {
     state = {
@@ -35,7 +34,6 @@ class GistDetail extends Component {
     render(){
         return(
             <Fragment>
-                <Navigation hideSearch/>
                 <GistMark markdown = {this.state.markdown}/>
             </Fragment>
                         

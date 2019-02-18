@@ -21,18 +21,18 @@ const PublicRoute = ({ component: Component, isLogged, ...rest }) => (
     <Route
       {...rest}
       render={props =>
-        (isLogged === false ? <Component {...props} /> : <Redirect to='/auth/gists' />)}
+        (isLogged === false ? <Component {...props}{...rest} /> : <Redirect to='/auth/gists' />)}
     />
   )
-const Routes = ({isLogged,user}) => {
+const Routes = ({isLogged,user, gists}) => {
   console.log(user)
   return(
     <Switch>
         {/*Public Routes*/}
-        <PublicRoute exact isLogged = {isLogged} path = '/' component={HomePage}/>
+        <PublicRoute exact isLogged = {isLogged} gists = {gists} path = '/' component={HomePage}/>
         <PublicRoute exact isLogged = {isLogged} path = '/gist/:id' component={GistDetail}/>
         {/*Private Routes*/}
-        <PrivateRoute exact isLogged = {isLogged} user={user} path = '/auth/gists' component={HomePageUser}/>
+        <PrivateRoute exact isLogged = {isLogged} gists = {gists} user={user} path = '/auth/gists' component={HomePageUser}/>
         <PrivateRoute exact isLogged = {isLogged} user={user} path = '/auth/gists/gist/:id' component={GistDetailUser}/>
         <PrivateRoute exact isLogged = {isLogged} user={user} path = '/auth/FormGist' component = {FormGist}/>
     </Switch>

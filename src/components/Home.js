@@ -6,7 +6,7 @@ class Home extends Component {
         return(
             <Fragment>
             {
-            hideHome=== 0 &&
+            hideHome === 0 &&
             //Home page
             <div className="homePage">
                 <h1 className="title">blog</h1>

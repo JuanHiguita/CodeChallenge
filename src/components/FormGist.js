@@ -35,7 +35,9 @@ class FormGist extends Component {
             })
             .then(response => response.json())
             .then(data => console.log(data))}
-        req()
+            alert('You have posted a new gist')
+            req()
+            window.location.href = "/auth/gists"
     }
     handleSubmit = (e) => {
         e.preventDefault();
@@ -56,7 +58,7 @@ class FormGist extends Component {
                         <div className= "form-group col-md-12">
                             <textarea className="form-control" ref = 'content' rows="20"/>
                         </div>
-                        <button className="btn btn-primary btn-block m-4" onClick={e=>this.handleSubmit(e)} >Post</button>
+                        <button className="btn btn-dark btn-block m-4" onClick={e=>this.handleSubmit(e)} >Post</button>
                     </div>
                 </div>
             </form>
