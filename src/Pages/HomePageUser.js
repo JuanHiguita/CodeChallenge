@@ -6,10 +6,10 @@ import Gist from '../components/UserAuthGist';
 class HomePageUser extends Component {
     state = {
         gists: [],
-        user: ''  
+        //user: ''  
     }
         componentDidMount(){
-            this.getUser()
+            //this.getUser()
         }
         //Here we use "fetch" to charge a Json with the data from the Github Gists
         getGists=(username)=>{
@@ -23,30 +23,26 @@ class HomePageUser extends Component {
             });
             }
         }
+        /*/Here we use the user token from github to get access to the authenticated user
         getUser = () => {
-            let token = 'e740008eb426c988960b0285d43a9b25f4e87ddd'//localStorage.getItem('userToken')
+            let token = localStorage.getItem('userToken')
             console.log(token);
-            fetch('https://api.github.com/user',{
-              method: "GET",
-              headers:{
-                authorization: `token ${token}`
-              }
-            })
+            fetch(`https://api.github.com/user?access_token=${token}`)
             .then(response => response.json())
             .then(res => this.setState({user: res}))
-          }
+          }*/
         //Here we build a HandleSubmit to get access in the form's input, for search a X user 
         handleSubmit=(username)=>{
             this.getGists(username);
         }
 
     render(){
-        console.log(this.state.user)
+        console.log(this.props.user)
         return(
             <Fragment>
-                <UserNavigation handleSubmit= {this.handleSubmit} isLogged = {this.isLogged} user = {this.state.user}/>
+                <UserNavigation handleSubmit= {this.handleSubmit} isLogged = {this.isLogged} user = {this.props.user}/>
                 <Home hideHome={this.state.gists.length}/>
-                {
+                {/*Here we map the gists, and then we use the keys to get access to the file data*/
                     this.state.gists.map((gist,index) => {      
                         const keys = Object.keys(gist.files);
                         return(

@@ -23,8 +23,8 @@ class GistDetail extends Component {
             console.log(error);
         });
     }
-    //Here we fetch the raw_url from the gist, and we get the data in format .txt, 
-    //then we transform the text to the format MarkDown
+    //Here we fetch the raw_url from the gist, to get the data in format .txt, 
+    //then we transform the text in format MarkDown
     getMarkdown=()=>{
         let gist = Object.values(this.state.gist.files)[0].raw_url
         fetch(gist)

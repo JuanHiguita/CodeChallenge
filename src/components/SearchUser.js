@@ -5,9 +5,7 @@ class SearchUser extends Component {
         super(props);
         this.username = React.createRef()
     }
-    componentDidMount(){
-        //console.log(this.props);
-    }
+    //Here we search all the gist from a X user
     handleSubmit=(e)=>{
         e.preventDefault();
         this.props.handleSubmit(this.username.current.value);  

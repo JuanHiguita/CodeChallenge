@@ -7,13 +7,11 @@ class GistDetailUser extends Component {
     state = {
         gist: null,
         markdown: '',
-        user: ''
     }
     componentDidMount(){
         let id = this.props.location.pathname.replace('/auth/gists/gist/','')
         console.log(id)
         this.getGist(id)
-        this.getUser()
     }
     //Here we use "fetch" to charge a Json with the data from the Github Gists
     getGist=(id)=>{
@@ -25,20 +23,8 @@ class GistDetailUser extends Component {
             console.log(error);
         });
     }
-    getUser = () => {
-        let token = 'e740008eb426c988960b0285d43a9b25f4e87ddd'//localStorage.getItem('userToken')
-        console.log(token);
-        fetch('https://api.github.com/user',{
-          method: "GET",
-          headers:{
-            authorization: `token ${token}`
-          }
-        })
-        .then(response => response.json())
-        .then(res => this.setState({user: res}))
-      }
-    //Here we fetch the raw_url from the gist, and we get the data in format .txt, 
-    //then we transform the text to the format MarkDown
+    //Here we fetch the raw_url from the gist, to get the data in format .txt, 
+    //then we transform the text in format MarkDown
     getMarkdown=()=>{
         let gist = Object.values(this.state.gist.files)[0].raw_url
         fetch(gist)
@@ -49,7 +35,7 @@ class GistDetailUser extends Component {
     render(){
         return(
             <Fragment>
-                <UserNavigation hideSearch user = {this.state.user}/>
+                <UserNavigation hideSearch user = {this.props.user}/>
                 <GistMark markdown = {this.state.markdown}/>
             </Fragment>
                         

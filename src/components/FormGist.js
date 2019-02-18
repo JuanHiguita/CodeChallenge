@@ -8,19 +8,17 @@ class FormGist extends Component {
             description: '',
             content: ''
         }
-            /*this.description = React.createRef()
-            this.filename = React.createRef()
-            this.content = React.createRef()*/
     }
+    //Here we use th method post to create a new gist
     Post = (filename,description,content) => {
         console.log(filename,description,content)
         let url ='https://api.github.com/gists'
-        let token = 'e740008eb426c988960b0285d43a9b25f4e87ddd'
+        let token = localStorage.getItem('userToken')  
         let post = {
             description: `${description}`,
             public: true,
             files: {
-                "Test.md": {
+                [`${filename}.md`]: {
                     content: `${content}`
                 }
             }
@@ -38,9 +36,6 @@ class FormGist extends Component {
             .then(response => response.json())
             .then(data => console.log(data))}
         req()
-    }
-    handleChange = (e) => {
-        
     }
     handleSubmit = (e) => {
         e.preventDefault();

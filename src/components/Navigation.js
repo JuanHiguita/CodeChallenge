@@ -11,7 +11,7 @@ class Navigation extends Component {
               {!hideSearch? 
                 <SearchUser handleSubmit = {handleSubmit}/>
                 :
-                <Link className = "buttonBack btn my-2 my-sm-0" to = '/'><i className="far fa-arrow-alt-circle-left"></i></Link>
+                <Link className = "buttonBack btn my-2 my-sm-0" to = '/'><i className="far fa-arrow-alt-circle-left backArrow"></i></Link>
                 }
                 <div className= "logo navbar-brand col-md-7 mx-auto navTitle"><img src="https://miro.medium.com/fit/c/240/240/1*WGASEyYzKuYBpgul2jYUnw.png" width = "70" height= "70"></img></div>
                 <div className="collapse navbar-collapse">

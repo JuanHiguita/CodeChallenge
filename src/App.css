@@ -34,11 +34,8 @@
   background-color: transparent;
 }
 
-.cardSignIn{
-  width: 20em;
-  height: 15em;
-  margin: 1em 25em;
-  padding-left: 1em;
+.backArrow{
+  font-size: 2em
 }
 
 .btnRead{

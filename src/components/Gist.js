@@ -6,6 +6,7 @@ class Gist extends Component{
     }
     render(){
         let {gist, keys, index} = this.props;
+        //Here we select all the gists from a user with language === Markdown
         let renderGist = Object.values(gist.files)[0].language === "Markdown"
         console.log(renderGist)
         return(
